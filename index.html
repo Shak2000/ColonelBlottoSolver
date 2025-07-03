@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colonel Blotto Solver</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font */
+        body {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-gray-700 p-8 rounded-xl shadow-2xl w-full max-w-md border border-gray-600">
+        <h1 class="text-3xl font-bold text-white mb-6 text-center">Colonel Blotto Solver</h1>
+
+        <div class="mb-6">
+            <label for="troops" class="block text-gray-300 text-sm font-semibold mb-2">Number of Troops:</label>
+            <input type="number" id="troops" value="5" min="1" class="w-full p-3 bg-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-500">
+        </div>
+
+        <div class="mb-8">
+            <label for="fields" class="block text-gray-300 text-sm font-semibold mb-2">Number of Fields:</label>
+            <input type="number" id="fields" value="3" min="1" class="w-full p-3 bg-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-500">
+        </div>
+
+        <button id="solveButton" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transform transition duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+            Solve Puzzle
+        </button>
+
+        <div id="loadingIndicator" class="hidden text-center mt-6 text-blue-400">
+            Calculating... Please wait.
+        </div>
+
+        <div id="results" class="mt-8 p-6 bg-gray-800 rounded-lg border border-gray-600 hidden">
+            <h2 class="text-xl font-semibold text-white mb-4">Solution:</h2>
+            <p class="text-gray-200 mb-2">Combination: <span id="solutionCombo" class="font-mono text-blue-400"></span></p>
+            <p class="text-gray-200 mb-2">Win Probability: <span id="winProb" class="font-mono text-green-400"></span></p>
+            <p class="text-gray-200 mb-2">Draw Probability: <span id="drawProb" class="font-mono text-yellow-400"></span></p>
+            <p class="text-gray-200 mb-4">Lose Probability: <span id="loseProb" class="font-mono text-red-400"></span></p>
+            <p id="conditionMet" class="text-gray-300 text-sm"></p>
+        </div>
+
+        <div id="errorMessage" class="mt-8 p-4 bg-red-800 text-white rounded-lg hidden">
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
